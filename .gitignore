@@ -1,0 +1,22 @@
+# Environnement virtuel
+env/
+venv/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+
+# Base de données (si SQLite)
+*.sqlite3
+
+# Configuration d’IDE
+.vscode/
+.idea/
+
+# Fichiers temporaires
+*.log
+*.tmp
+*.bak
+
+# Fichiers secrets (si tu en as)
+.env
