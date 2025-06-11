@@ -16,7 +16,7 @@ git clone https://github.com/gitili/M1_webdev.git
 cd django-web-app
 python -m venv env
 pip install -r requirements.txt
-
+```
 ## Lancement
 
 ```bash
@@ -24,5 +24,5 @@ cd django-web-app
 env\Scripts\activate
 cd merchex
 python manage.py runserver
-
+```
 -> Rends-toi sur http://localhost:8000/accueil pour commencer à gérer tes films.
