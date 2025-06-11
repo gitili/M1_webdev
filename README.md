@@ -1,7 +1,7 @@
 # Merchex - Gestion de films
 
 Merchex est une application web Django pour gérer ta collection de films. 
-C'est un projet réalisé dans le cadre de mon cours de web programmation de M1.
+C'est un projet réalisé dans le cadre de mon cours de web programmation de M1, à partir d'OpenClassrooms (https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django).
 
 ## Fonctionnalités
 
