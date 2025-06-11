@@ -1,0 +1,86 @@
+/* HAUT DE LA PAGE */
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fef6f9; /* rose poudré très clair */
+    color: #4a4a4a;
+}
+
+header {
+    background: linear-gradient(90deg, #a0c4ff, #bdb2ff, #ffc6ff);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #d0bfff;
+}
+
+.header-container {
+    display: flex;
+    align-items: center; /* centre verticalement le texte par rapport au logo */
+    justify-content: center; /* centre le tout horizontalement dans le header */
+    gap: 20px; /* espace entre le logo et le texte */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #4a4a4a;
+    text-decoration: underline;
+}
+
+main {
+    padding: 10px;
+}
+
+/* CORPS DE LA PAGE */
+
+.boutons-film{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+/* Hover pour les boutons Modifier/Supprimer */
+.boutons-film:hover {
+    background-color: #b983ff;
+}
+
+a:hover {
+    color: #ffafcc;
+    text-decoration: underline;
+}
+
+p {
+    background-color: white;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+/* BAS DE LA PAGE */
+
+footer {
+    background-color: #a0c4ff;
+    color: #4f4d4d;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    border-top: 5px solid #bdb2ff;
+}

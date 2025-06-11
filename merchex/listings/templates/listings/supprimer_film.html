@@ -1,0 +1,11 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+  <h2>Supprimer le film : {{ film.name }}</h2>
+  <p>Êtes-vous sûr de vouloir supprimer ce film ?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Oui, supprimer</button>
+  </form>
+  <a href="{% url 'filmotheque' %}">Annuler</a>
+{% endblock %}

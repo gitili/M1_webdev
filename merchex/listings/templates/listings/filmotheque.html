@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h2>Ma filmothèque</h2>
+
+    {% if films %}
+        <ul>
+            {% for film in films %}
+            <li class="{% if film.statut == 'VU' %}film-vu{% else %}film-a-voir{% endif %}">
+                <div class="film-ligne">
+                  <!-- Partie gauche : titre + statut -->
+                  <div class="film-infos">
+                    <a href="{% url 'film_detail' film.id %}">
+                      <strong>{{ film.name }}</strong>
+                    </a> –
+                    <em>
+                      {% if film.statut == 'VU' %}
+                        ✅ Vu
+                      {% else %}
+                        👀 À voir
+                      {% endif %}
+                    </em>
+                </div>
+              
+                  <!-- Partie droite : boutons -->
+                  <div class="boutons-film">
+                    <form action="{% url 'changer_statut' film.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="{% if film.statut == 'AVOIR' %}btn-vu{% else %}btn-a-voir{% endif %}">
+                            {% if film.statut == "AVOIR" %} ✅ Marquer comme vu {% else %} 👀 Marquer comme à voir {% endif %}
+                        </button>
+                    </form>
+              
+                    <a href="{% url 'modifier_film' film.id %}">
+                        <button type="button">Modifier</button>
+                    </a>
+              
+                    <form action="{% url 'supprimer_film' film.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" onclick="return confirm('Supprimer ce film ?');">Supprimer</button>
+                    </form>
+                  </div>
+                </div>
+              </li>
+              
+            {% endfor %}
+        </ul>
+        
+    {% else %}
+        <p>Aucun film ajouté pour le moment.</p>
+    {% endif %}
+
+<p> J'ai {{ films|length }} films enregistrés.</p>
+
+{% endblock %}

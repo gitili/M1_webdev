@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<h2>Détail du film</h2>
+
+<p><strong>Titre :</strong> {{ film.name }}</p>
+<p><strong>Statut :</strong> {{ film.get_statut_display }}</p>
+<p><strong>Durée :</strong> {{ film.duree }} minutes</p>
+<p><strong>Genre :</strong> {{ film.genre }}</p>
+<p><strong>Synopsis :</strong> {{ film.synopsis }}</p>
+
+<!-- Bouton modifier -->
+<a href="{% url 'modifier_film' film.id %}">
+    <button type="button">Modifier ce film</button>
+</a>
+
+<!-- Formulaire suppression -->
+<form action="{% url 'supprimer_film' film.id %}" method="post" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit" onclick="return confirm('Supprimer ce film ?');">Supprimer ce film</button>
+</form>
+
+<!-- Lien retour -->
+<p><a href="{% url 'filmotheque' %}">← Retour à la filmothèque</a></p>
+
+{% endblock %}
